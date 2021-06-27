@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+<body>
+<section class="hero is-primary is-bold">
+<div class="hero-body">
+    <div class="container">
+        <h1 class = "title">How's the Weather?</h1>
+    </div>
+</div>
+</section>
+
+<section class="section">
+        <div class="column is-offset-4 is-4">
+            <form method = 'POST'>
+                {% csrf_token %}
+                <div class= "field has-addons">
+                    <div class="control is-expanded">
+<!--                        <input class="input" type="text" placeholder="Enter City name">-->
+                        {{ form.name }}
+                    </div>
+                    <div class="control">
+                        <button type="submit" class="button is-info">
+                            Find Weather
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+
+<section class="hero">
+        <div class="column is-offset-4 is-4">
+          {% for city_weather in weather_list %}
+          <div class="box">
+              <article class = "media">
+              <div class="media-left">
+                     <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Image">
+              </div>
+              <div class="media-content">
+                <div class="content">
+                    <p>
+                        <span class="title"> {{ city_weather.city }} </span><br>
+                        temperature(in fahrenheit): {{ city_weather.temperature }} <br>
+                        humidity: {{ city_weather.humidity }} <br>
+                        pressure: {{ city_weather.pressure }} <br>
+                        {{ city_weather.description }}
+                    </p>
+                </div>
+              </div>
+              </article>
+          </div>
+            {% endfor %}
+        </div>
+</section>
+</body>
+</html>
