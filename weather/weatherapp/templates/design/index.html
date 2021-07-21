@@ -29,26 +29,29 @@
                         </button>
                     </div>
                 </div>
+                {% if message %}
+                <div class="notification {{message_class}}">{{message}}</div>
+                {% endif %}
             </form>
         </div>
 </section>
 
 <section class="hero">
         <div class="column is-offset-4 is-4">
-          {% for city_weather in weather_list %}
+          {% for weather in weather_list %}
           <div class="box">
               <article class = "media">
               <div class="media-left">
-                     <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Image">
+                     <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
               </div>
               <div class="media-content">
                 <div class="content">
                     <p>
-                        <span class="title"> {{ city_weather.city }} </span><br>
-                        temperature(in fahrenheit): {{ city_weather.temperature }} <br>
-                        humidity: {{ city_weather.humidity }} <br>
-                        pressure: {{ city_weather.pressure }} <br>
-                        {{ city_weather.description }}
+                        <span class="title"> {{ weather.city }} </span><br>
+                        temperature(in fahrenheit): {{ weather.temperature }} <br>
+                        humidity: {{ weather.humidity }} <br>
+                        pressure: {{ weather.pressure }} <br>
+                        {{ weather.description }}
                     </p>
                 </div>
               </div>
