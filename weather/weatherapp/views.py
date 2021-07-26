@@ -3,16 +3,10 @@ from django.shortcuts import render
 import requests
 from .models import City
 from .forms import CityForm
+import os 
 
-import environ
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-# reading .env file
-environ.Env.read_env()
 
-apiId = env('api_id')
+apiId = os.environ['weatherapp_api_key']
 
 def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=%s' %apiId
