@@ -19,6 +19,7 @@ This project is a simple web-based application for finding the present weather c
 
 ## Setup
 To setup the project install the following:
+
 **pip install django**
 
 **pip install requests**
