@@ -18,8 +18,9 @@ This project is a simple web-based application for finding the present weather c
 * PycharmIDE
 
 ## Setup
-To run this project install the following:
+To setup the project install the following:
 **pip install django**
+
 **pip install requests**
 #### (You can also create a virtual environment and install all the related packages into that environment so that you can create an isolated environment for your project.)
 
