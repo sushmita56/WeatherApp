@@ -34,7 +34,8 @@ http://api.openweathermap.org/data/2.5/weather?q=las%20vegas&units=imperial&appi
 
 Here my API key is protected inside an environment variable, I've accessed it from the code as I do not want to reveal the key publicly. 
 
-After setting up everything that is mentioned above, run the following command to start the project: **python manage.py runserver**
+After setting up everything that is mentioned above, run the following command to start the project: 
+**python manage.py runserver**
 
 
 
